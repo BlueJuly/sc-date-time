@@ -111,7 +111,7 @@
 	}
         if ((attrs['autosave'] != null) || scDateTimeConfig.autosave) {
           scope.saveUpdateDate = function() {
-            return ngModel.$setViewValue(scope.date);
+            return true;
           };
           return scope.autosave = true;
         } else {
@@ -246,8 +246,8 @@
               return classString;
             },
             select: function(d) {
-	      scope.updateDate();
               scope.date.setFullYear(this._year, this._month, d);
+	      scope.updateDate();
               return scope.saveUpdateDate();
             },
             monthChange: function(save) {
