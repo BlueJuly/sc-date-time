@@ -243,6 +243,7 @@
               return classString;
             },
             select: function(d) {
+	      scope.save();
               scope.date.setFullYear(this._year, this._month, d);
               return scope.saveUpdateDate();
             },
